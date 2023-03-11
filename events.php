@@ -40,6 +40,12 @@
       }
     </script>
 
+<script>
+      function redirectSignup() {
+        window.location.href="signup.php";
+      }
+    </script>
+
     <script>
       function redirectEvents() {
         window.location.href="events.php";
