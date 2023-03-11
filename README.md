@@ -17,7 +17,7 @@ Event details including location, date, time, description, and organizer informa
 
 ## TechStack used :
 
-HTML , CSS, PHP and Js
+HTML , CSS, PHP, JS and also used Bootstraped Template
 
 
 ## Authors
