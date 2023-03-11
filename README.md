@@ -25,5 +25,3 @@ HTML , CSS, PHP and Js
 [@Soham Shee](https://github.com/soham-shee)
 
 [@Akkaldevi Saivinayak](https://github.com/riskyhomo)
-
-
