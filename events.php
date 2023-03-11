@@ -95,7 +95,7 @@
                     <tbody>
                       <tr>
                       <?php
-                        $conn = mysqli_connect("localhost", "root", "", "dashboard");
+                        $conn = mysqli_connect("sql113.epizy.com","epiz_33775708","aKvE7bZITRl","epiz_33775708_dashboard");
 
                         if(isset($_POST['filter_btn']))
                         {

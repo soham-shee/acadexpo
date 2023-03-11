@@ -104,7 +104,7 @@
                     <tbody>
                       <tr>
                       <?php
-                        $conn = mysqli_connect("localhost", "root", "", "dashboard");
+                        $conn = mysqli_connect("sql113.epizy.com","epiz_33775708","aKvE7bZITRl","epiz_33775708_dashboard");
                         // Check connection
                         if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
