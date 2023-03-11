@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$connection = mysqli_connect("localhost","root","","dashboard");
+$connection = mysqli_connect("https://databases-auth.000webhost.com/index.php","localhost","2-aF2xq<A!pVpI@[","id20434799_dashboard");
 if(isset($_POST['signup_btn']))
 {
 	$name = $_POST['name'];
