@@ -128,7 +128,10 @@
                 <label for="inputEmail" class="col-sm-2 col-form-label">Event Type</label>
                 <div class="col-sm-10">
                     <select type="select" name="type_info" class="form-control" id="type" placeholder="like- workshop, conference, journals..." required>
-                      <option value="workshop">Workshop</option>
+                    <option value="workshop">Workshop</option>
+                      <option value="hackathons">Hackathons</option>
+                      <option value="quizzes">Quizzes</option>
+                      <option value="competitions">Competitions</option>
                       <option value="conference">Conference</option>
                       <option value="journals">Journals</option>
                     </select>
