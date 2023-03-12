@@ -123,7 +123,7 @@
                         if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                         }
-                        $sql = "SELECT name, date, noi, vid, time, location, theme FROM events_info WHERE type='$type' AND date<'$date'";
+                        $sql = "SELECT name, date, noi, vid, time, location, theme FROM events_info WHERE type='$type' OR date<'$date'";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                         // output data of each row
