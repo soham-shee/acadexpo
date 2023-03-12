@@ -68,21 +68,29 @@
 
           <div class="col mb-10 mt-4">
           <form action="" method="POST">
-          <label for="inputEmail" class="row-sm-2 row-form-label">Event Type</label>
-                <div class="col-sm-2">
-                    <select type="select" name="type_info" class="form-control" id="type" placeholder="like- workshop, conference, journals..." required>
-                      <option value="workshop">Workshop</option>
-                      <option value="hackathons">Hackathons</option>
-                      <option value="quizzes">Quizzes</option>
-                      <option value="competitions">Competitions</option>
-                      <option value="conference">Conference</option>
-                      <option value="journals">Journals</option>
-                    </select>
-                </div>
-                <div class="row-sm-10">
-                    <button name="filter_btn" type="submit" class="btn btn-primary">Filter</button>
-                </div>
-          </form><br>
+
+<label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+      <div class="col-sm-2">
+          <input type="date" name="date_info" class="form-control" id="inputName" placeholder="">
+      </div>
+
+
+<label for="inputEmail" class="col-sm-2 col-form-label">Event Type</label>
+      <div class="col-sm-2">
+          <select type="select" name="type_info" class="form-control" id="type" placeholder="like- workshop, conference, journals..." required>
+            <option value="workshop">Workshop</option>
+            <option value="hackathons">Hackathons</option>
+            <option value="quizzes">Quizzes</option>
+            <option value="competitions">Competitions</option>
+            <option value="conference">Conference</option>
+            <option value="journals">Journals</option>
+          </select>
+      </div>
+
+      <div class="row-sm-10">
+          <button name="filter_btn" type="submit" class="btn btn-primary">Filter</button>
+      </div>
+</form><br>
             <div class="height-10 features-items mb-4">
               <div class="height-10 features-items">
 
@@ -109,12 +117,13 @@
                         if(isset($_POST['filter_btn']))
                         {
                           $type = $_POST['type_info'];
+                          $date = $_POST['date_info'];
                       
                         // Check connection
                         if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                         }
-                        $sql = "SELECT name, date, noi, vid, time, location, theme FROM events_info WHERE type='$type'";
+                        $sql = "SELECT name, date, noi, vid, time, location, theme FROM events_info WHERE type='$type' AND date<'$date'";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                         // output data of each row
