@@ -10,7 +10,7 @@ User registration and login
 
 Event submission and management 
 
-Search and filter events by topic
+Search and filter events by topic, and date
 
 Event details including location, date, time, description, and organizer information
 
