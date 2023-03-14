@@ -10,14 +10,14 @@ User registration and login
 
 Event submission and management 
 
-Search and filter events by topic, and date
+Search and filter events by topic, and date (ddmmyyyy)
 
-Event details including location, date, time, description, and organizer information
+Event details including location, date, time, event link, and organizer information
 
 
 ## TechStack used :
 
-HTML , CSS, PHP, JS, mySQL and also used Bootstraped Template
+HTML , CSS, PHP, JS, mySQL and Bootstraped Template also used
 
 
 ## Authors

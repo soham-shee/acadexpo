@@ -2,6 +2,7 @@
 session_start();
 
 $connection = mysqli_connect("sql113.epizy.com","epiz_33775708","aKvE7bZITRl","epiz_33775708_dashboard");
+// Signup code
 if(isset($_POST['signup_btn']))
 {
 	$name = $_POST['name'];
@@ -27,6 +28,8 @@ if(isset($_POST['signup_btn']))
 	}
 }
 
+// Login code
+
 if(isset($_POST['login_btn']))
 {
 	$email_login = $_POST['email'];
@@ -51,6 +54,7 @@ if(isset($_POST['login_btn']))
 	}
 }
 
+// Info-Gathering code
 
 if(isset($_POST['verify_btn']))
 {

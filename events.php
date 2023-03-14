@@ -112,6 +112,7 @@
                     <tbody>
                       <tr>
                       <?php
+                        // database connection
                         $conn = mysqli_connect("sql113.epizy.com","epiz_33775708","aKvE7bZITRl","epiz_33775708_dashboard");
 
                         if(isset($_POST['filter_btn']))
@@ -123,6 +124,8 @@
                         if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                         }
+
+                        // filter sql code
                         $sql = "SELECT name, date, noi, vid, time, location, theme FROM events_info WHERE type='$type' OR date<'$date'";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {

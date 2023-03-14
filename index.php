@@ -104,6 +104,7 @@
                     <tbody>
                       <tr>
                       <?php
+                        // mysql connection
                         $conn = mysqli_connect("sql113.epizy.com","epiz_33775708","aKvE7bZITRl","epiz_33775708_dashboard");
                         // Check connection
                         if ($conn->connect_error) {
