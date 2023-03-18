@@ -2,15 +2,15 @@
 session_start();
 
 $connection = mysqli_connect("sql113.epizy.com","epiz_33775708","aKvE7bZITRl","epiz_33775708_dashboard");
-// Signup code
 if(isset($_POST['signup_btn']))
 {
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$noi = $_POST['noi'];
 	$password = $_POST['password'];
+    $encpass = md5($password);
 
-	$query = "INSERT INTO `info_provider`(`name`, `email`, `noi`, `password`) VALUES ('$name','$email','$noi','$password')";
+	$query = "INSERT INTO `info_provider`(`name`, `email`, `noi`, `password`) VALUES ('$name','$email','$noi','$encpass')";
 	$query_run = mysqli_query($connection, $query);
 
 
@@ -28,22 +28,33 @@ if(isset($_POST['signup_btn']))
 	}
 }
 
-// Login code
-
 if(isset($_POST['login_btn']))
 {
 	$email_login = $_POST['email'];
 	$password_login = $_POST['password'];
 
-	$query = "SELECT * FROM `info_provider` WHERE email='$email_login' AND password='$password_login'";
+	$query = "SELECT * FROM `info_provider` WHERE email='$email_login'";
 	$query_run = mysqli_query($connection, $query);
 
+    $result = mysqli_fetch_assoc($query_run);
+    $email_login = $result ['email'];
+    $encpasss = $result ['password'];
 
-	if(mysqli_fetch_array($query_run))
+
+	if(mysqli_num_rows($query_run)>0)
 	{
-		$_SESSION['email_login'] = $email_login;
-		$email_login = $_POST['email'];
-		header('Location: info_gathering.php');
+        if (md5($password_login)==$encpasss){
+            $_SESSION['email_login'] = $email_login;
+		    $email_login = $_POST['email'];
+		    header('Location: info_gathering.php');
+        }
+		// $_SESSION['email_login'] = $email_login;
+		// $email_login = $_POST['email'];
+		// header('Location: info_gathering.php');
+
+        else{
+            echo"Incorrect Password";
+        }
 
 	}
 	else
@@ -54,7 +65,6 @@ if(isset($_POST['login_btn']))
 	}
 }
 
-// Info-Gathering code
 
 if(isset($_POST['verify_btn']))
 {
